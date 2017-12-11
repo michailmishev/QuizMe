@@ -10,9 +10,17 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    
+    @IBOutlet weak var progressBar: UIView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+
+        
+        progressBar.frame.size.width = (view.frame.size.width / 12) * 6
+        
     }
 
     override func didReceiveMemoryWarning() {
