@@ -83,7 +83,19 @@ class ViewController: UIViewController {
             
         } else {
             
-            startOver()
+            scoreLabel.text = "Score: \(score)"
+            
+            let alert = UIAlertController(title: "Awesome!", message: "You've finished all the questions, do you want to try again?", preferredStyle: .alert)
+            
+            let restartAction = UIAlertAction(title: "Restart", style: .default, handler: { (UIAlertAction) in
+                
+                self.startOver()
+                
+            })
+            
+            alert.addAction(restartAction)
+            
+            present(alert, animated: true, completion: nil)
             
         }
         
