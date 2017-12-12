@@ -60,12 +60,15 @@ class ViewController: UIViewController {
         let correctAnswer = allQuestions.questionsList[questionNumber].answer
         
         if pickedAnswer == correctAnswer {
+            
             score += 1
-            print("true")
-            //show green thick
+            ProgressHUD.showSuccess("Correct")
+            
         } else {
+            
             print("false")
-            //show red x
+            ProgressHUD.showError("Wrong!")
+            
         }
         
     }
@@ -85,7 +88,7 @@ class ViewController: UIViewController {
             
             scoreLabel.text = "Score: \(score)"
             
-            let alert = UIAlertController(title: "Awesome!", message: "You've finished all the questions, do you want to try again?", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Awesome!", message: "You've finished all the questions. Do you want to try again?", preferredStyle: .alert)
             
             let restartAction = UIAlertAction(title: "Restart", style: .default, handler: { (UIAlertAction) in
                 
@@ -129,4 +132,11 @@ class ViewController: UIViewController {
     
     
 }
+
+
+
+
+
+
+
 
